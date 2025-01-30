@@ -1,4 +1,5 @@
 const express=require("express");
+require("dotenv").config();
 const app= express();
 
 const router =require("./router/auth-router")
@@ -9,8 +10,7 @@ app.use(express.json()); // allow to use json
 
  
 
-const port=3000;
-
+const port=process.env.PORT
 connectDb().then(()=>{
 
 app.listen(port,() =>{
